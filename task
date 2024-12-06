@@ -1,0 +1,118 @@
+//zadanie1
+#include <iostream> 
+using namespace std; 
+ 
+void fmax(int* fnumber1, int* fnumber2); 
+ 
+int main() 
+{ 
+    setlocale(LC_ALL, "ru"); 
+    int number1; 
+    int number2; 
+    cout << "Программа выбирает наибольшее из 2 чисел\n" << "Введите первое число: "; 
+    cin >> number1; 
+ 
+    cout << "Введите второе число : "; 
+    cin >> number2; 
+ 
+    int* pnumber1 = &number1; 
+    int* pnumber2 = &number2; 
+ 
+    fmax(pnumber1, pnumber2); 
+} 
+void fmax(int* fnumber1, int* fnumber2) { 
+    cout << *fnumber1; 
+ 
+    if (*fnumber1 > *fnumber2) 
+    { 
+        cout << " > "; 
+    } 
+     
+    else if (*fnumber1 < *fnumber2) 
+    { 
+        cout << " < "; 
+     } 
+ 
+    else 
+    { 
+        cout << " = "; 
+    } 
+ 
+    cout << *fnumber2; 
+ 
+}
+
+//zadanie2
+#include <iostream> 
+using namespace std; 
+ 
+void znak(int* number); 
+ 
+int main() 
+{ 
+    setlocale(LC_ALL, "ru"); 
+    int unumber; 
+    cout << "Введите число: "; 
+    cin >> unumber; 
+ 
+    int* usnumber = &unumber; 
+    znak(usnumber); 
+ 
+} 
+ 
+void znak(int* number) { 
+    cout << "Число " << *number; 
+ 
+    if (*number > 0) 
+    { 
+        cout << " Положительное"; 
+    } 
+ 
+    else if (*number < 0) 
+    { 
+        cout << " Отрицательное"; 
+    } 
+ 
+    else 
+    { 
+        cout << " Равно нулю"; 
+    } 
+}
+
+//zadanie3
+#include <iostream> 
+using namespace std; 
+ 
+void enumb(int* number1, int* number2); 
+void pnumb(int* number1, int* number2); 
+ 
+int main() 
+{ 
+    setlocale(LC_ALL, "ru"); 
+    int unumber1; 
+    int unumber2; 
+    cout  << "Введите первое число : "; 
+    cin >> unumber1; 
+    cout << "Введите второе число : "; 
+    cin >> unumber2; 
+ 
+    int* pnumber1 = &unumber1; 
+    int* pnumber2 = &unumber2; 
+ 
+    pnumb(pnumber1, pnumber2); 
+    enumb(pnumber1, pnumber2); 
+    pnumb(pnumber1, pnumber2); 
+} 
+ 
+void enumb(int* number1, int* number2) 
+{ 
+    int mest = *number1; 
+    *number1 = *number2; 
+    *number2 = mest; 
+} 
+ 
+void pnumb(int* number1, int* number2) 
+{ 
+    cout << "Первое число = " << *number1 << endl << 
+        "Второе число = " << *number2 << endl; 
+}
